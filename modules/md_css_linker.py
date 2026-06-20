@@ -40,6 +40,9 @@ def md_to_html(md_path: str, css_path: str, out_file: str) -> None:
     md_content = read_file(md_path)
     css_content = read_file(css_path)
 
+    if not out_file: 
+        out_file = "output.html"
+
     final_html = compile_html(md_content, css_content)
 
     write_file(final_html, out_file)
